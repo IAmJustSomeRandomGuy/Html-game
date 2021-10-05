@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>A Game</title>
+		<link rel="stylesheet" href="./css/style.css" id="css-file" />
+	</head>
+	<body>
+		<div id="game" class="non-ads">
+			<!-- start screen to identify if the user is on mobile or pc? and to make sure all is loaded -->
+			<div id="start-screen-container">
+				<div id="start-screen" class="clickable-no-animation">
+					<div id="start-button" class="clickable">Start</div>
+				</div>
+			</div>
+			<!-- shows different stats -->
+			<div id="stat-board">
+				<div id="stats">
+					<div class="stat" id="attack-stat">Attack = 1</div>
+					<div class="stat" id="crit-chance-stat">Crit Chance = 0%</div>
+					<div class="stat" id="crit-multi-stat">Crit Multiplier = 1x</div>
+					<div class="stat invisible" id="money-multi-stat">money Multiplier = 1x</div>
+				</div>
+				<div id="sliders">
+					<div class="slider">
+						<div class="slider-text" id="frenzy-slider">Frenzy in 3:00</div>
+						<div class="progress-bar" id="frenzy-progress-bar"></div>
+						<div class="empty" id="frenzy-progress-empty"></div>
+					</div>
+					<div class="slider">
+						<div class="slider-text" id="league-slider">League rank 0 (0%)</div>
+						<div class="progress-bar" id="league-progress-bar"></div>
+						<div class="empty" id="league-progress-empty"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- where the fighting happens -->
+			<div id="field">
+				<div id="side-buttons">
+					<div class="sidebutton clickable" id="prestige-button">Prestige<br />0/25</div>
+					<div class="sidebutton clickable invisible" id="prestige-shop-button">Prestige Shop</div>
+					<div class="sidebutton clickable invisible" id="super-prestige-shop-button">Super Prestige Shop</div>
+				</div>
+				<div id="rythm-display-container">
+					<div id="rythm-display-bar" class="rythm-display"></div>
+					<div id="rythm-display-cover" class="rythm-display"></div>
+					<p id="rythm-display-text">1x</p>
+				</div>
+				<div id="content-mover"></div>
+				<div class="invisible" id="prestige-timer">0:30s</div>
+				<div id="round-counter">round: 1</div>
+				<div id="enemy-health">10/10 HP</div>
+				<div id="enemy" class="clickable">
+					<div id="left-eye" class="body-part"></div>
+					<div id="right-eye" class="body-part"></div>
+					<div id="mouth" class="body-part"></div>
+					<div id="weak-spot" class="clickable-no-animation">
+						<div class="x x1 inverted-enemy-color"></div>
+						<div class="x x2 inverted-enemy-color"></div>
+					</div>
+				</div>
+				<div id="money-counter">0$</div>
+				<div id="money-effect">+1$</div>
+			</div>
+			<div id="prestige-money-effect">+1¢</div>
+
+			<!-- might rename to just menu -->
+			<div id="upgrade-menu">
+				<div class="upgrade clickable" id="attack-upgrade">Attack<br />lvl 1<br />cost: x$</div>
+				<div class="upgrade clickable" id="crit-chance-upgrade">Crit Chance<br />lvl 0<br />cost: x$</div>
+				<div class="upgrade locked" id="crit-multi-upgrade">Crit Multiplier<br />lvl 1<br />cost: x$</div>
+				<div class="upgrade locked invisible" id="money-multi-upgrade">Money Multiplier<br />lvl 1<br />cost: x$</div>
+			</div>
+
+			<!-- darkens background  -->
+			<div id="darken-background" class="darken-background-display invisible">
+				<div id="prestige-shop" class="shop invisible">
+					<div class="shop-header">
+						Prestige Shop
+						<div class="close-shop clickable" id="close-prestige-shop">
+							<div class="x x1"></div>
+							<div class="x x2"></div>
+						</div>
+					</div>
+					<div class="shop-body">
+						<div class="shop-currency-wrap">
+							<div class="shop-currency" id="prestige-money-counter">0¢</div>
+						</div>
+						<div class="upgrade clickable" id="prestige-attack-upgrade">Attack<br />lvl 0<br />cost: x¢</div>
+						<div class="upgrade clickable" id="prestige-crit-chance-upgrade">Crit Chance<br />lvl 0<br />cost: x¢</div>
+						<div class="upgrade clickable locked" id="prestige-crit-multi-upgrade">
+							Crit Multiplier<br />lvl 0<br />cost: x¢
+						</div>
+						<div class="upgrade clickable invisible locked" id="prestige-money-multi-upgrade">
+							Money Multiplier<br />lvl +0<br />cost: x¢
+						</div>
+					</div>
+				</div>
+				<div id="super-prestige-shop" class="shop invisible">
+					<div class="shop-header">
+						Prestige Shop
+						<div class="close-shop clickable" id="close-super-prestige-shop">
+							<div class="x x1"></div>
+							<div class="x x2"></div>
+						</div>
+					</div>
+					<div class="shop-body">
+						<div class="shop-currency-wrap">
+							<div class="shop-currency" id="super-prestige-money-counter">0₴</div>
+						</div>
+						<div class="upgrade clickable" id="round-attack-upgrade">Add Round To Damage<br />lvl 0<br />cost: x₴</div>
+						<div class="upgrade clickable" id="rythm-upgrade">Stronger Rythm<br />lvl 0<br />cost: x₴</div>
+						<div class="upgrade clickable" id="less-random-money-upgrade">
+							Less Random Money<br />lvl 0<br />cost: x₴
+						</div>
+						<div class="upgrade clickable" id="max-money-upgrade">Bigger Max Roll<br />lvl 0<br />cost: x₴</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="./js/main.js" class="non-ads"></script>
+		<audio src="./music/background_music.mp3" id="background-music" class="non-ads" loop></audio>
+	</body>
+</html>
