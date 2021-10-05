@@ -5,5 +5,7 @@ All the assets are mine **except for the music** (the music is from a game calle
 
 ### a few explenations to the game if anybody plays it:
   when you prestige the timer time = round * 2
+  
   the x does 2x damage
+  
   and the combo is not speed but rythm/consistancy
